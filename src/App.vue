@@ -26,10 +26,13 @@ const qrcode = useQRCode(text, {
 </script>
 
 <template>
-    <main class="grid grid-cols-2 gap-2">
-        <textarea v-model="params.text" resize="none" class="w-full aspect-square" />
+    <main class="bg-slate-600 h-screen w-screen p-8">
+        <section class="max-w-lg md:max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
 
-        <div v-show="params.text" v-html="qrcode" class="w-full aspect-square" />
+            <textarea v-model="params.text" resize="none" class="w-full aspect-square rounded-md p-6" />
+
+            <div v-show="params.text" v-html="qrcode" class="w-full aspect-square rounded-md overflow-hidden" />
+        </section>
 
     </main>
 </template>
